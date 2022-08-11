@@ -1,0 +1,17 @@
+.main {
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 80rem;
+}
+
+.h3 {
+  font-family: "Lucida Console", monospace;
+  font-size: 20px;
+  letter-spacing: 7px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.div {
+  padding: 15px;
+}

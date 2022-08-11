@@ -1,0 +1,42 @@
+.appMain {
+  width: 70%;
+  height: 100vh;
+}
+
+.appMainNoteEdit,
+.appMainNotePreview {
+  height: 50vh;
+}
+
+.noActiveNote {
+    width: 70%;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 2rem;
+    color: #999;
+  }
+  
+  /* Editing */
+  .appMainNoteEdit {
+    padding: 25px;
+  }
+  
+  .appMainNoteEdit input,
+  textarea {
+    display: block;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 100%;
+    height: calc(50vh - 130px);
+    padding: 10px;
+    resize: none;
+    font-size: inherit;
+    font-family: inherit;
+  }
+  .appMainNoteEdit input {
+    height: 50px;
+    font-size: 2rem;
+  }
+  
+  

@@ -1,0 +1,79 @@
+
+.appSidebar {
+    width: 30%;
+    height: 100vh;
+    border-right: 1px solid #ddd;
+  }
+  
+  .appSidebarHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+  }
+  .appSidebarHeader h1 {
+    margin: 0;
+  }
+  
+  .appSidebarNotes {
+    height: calc(100vh - 78px);
+    overflow-y: scroll;
+  }
+  .appSidebarNote {
+    padding: 25px;
+    cursor: pointer;
+  }
+  .sidebarNoteTitle {
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+  .appSidebarNote p {
+    margin: 10px 0;
+  }
+  .appSidebarNote small {
+    display: block;
+    color: #999;
+  }
+  
+  .appSidebarNote:hover {
+    background: #ddd;
+  }
+
+  .appSidebarNote.active,
+  .appSidebarNote.active small {
+    background: #08c;
+    color: white;
+  }
+
+  .sidebarDelbutton {
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+      }
+  
+  .sidebarDelbutton:hover,
+  .sidebarDelbutton.active {
+    color: rgb(164, 17, 17);
+  }
+
+  .sidebarAddbutton {
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+      }
+
+  .sidebarAddbutton:hover,
+  .sidebarAddbutton.active {
+    color: #04c;
+  }
+  
+  .main {
+    display: flex;
+      
+  }
