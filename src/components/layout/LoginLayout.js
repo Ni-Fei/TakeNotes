@@ -1,40 +1,67 @@
-import { useRef } from "react";
+import { useState } from "react";
 import Card from "../ui/Card";
-import classes from "./LoginLayout.module.css";
+import classes from "./RegisterUserLayout.module.css";
 
 function LoginLayout() {
-  const usernameInputRef = useRef();
-  const passwordInputRef = useRef();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-  function submitHandler(event) {
+  async function loginUser(event) {
     event.preventDefault();
 
-    const enteredUsername = usernameInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
+    const response = await fetch("http://localhost:1140/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    });
 
-    const loginData = {
-      username: enteredUsername,
-      password: enteredPassword,
-    };
+    const data = await response.json();
 
-    console.log(loginData);
+    if(data.user){
+      localStorage.setItem('token', data.user)
+      alert("Login successful!")
+      window.location.href = '/my-notes-list'
+    }
+    else{
+      alert("Please check username and password ")
+      
+    }
+
+    console.log(data);
   }
 
   return (
     <Card>
-      <form className={classes.form} onSubmit={submitHandler}>
+      <form className={classes.form} onSubmit={loginUser}>
         <div className={classes.control}>
-          <label htmlFor> USERNAME </label>
-          <input type="text" required id="title" ref={usernameInputRef} />
+          <label> USERNAME </label>
+          <input
+            type="text"
+            required
+            id="title"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
 
         <div className={classes.control}>
-          <label htmlFor> PASSWORD </label>
-          <input type="text" required id="password" ref={passwordInputRef} />
+          <label> PASSWORD </label>
+          <input
+            type="text"
+            required
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
 
         <div className={classes.actions}>
-          <button>GO TO MY ACCOUNT</button>
+          <button>LOGIN</button>
         </div>
       </form>
     </Card>

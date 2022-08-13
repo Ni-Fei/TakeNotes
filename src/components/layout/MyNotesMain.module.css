@@ -3,40 +3,56 @@
   height: 100vh;
 }
 
-.appMainNoteEdit,
-.appMainNotePreview {
-  height: 50vh;
-}
 
 .noActiveNote {
-    width: 70%;
-    height: 100vh;
-    line-height: 100vh;
-    text-align: center;
-    font-size: 2rem;
-    color: #999;
-  }
-  
-  /* Editing */
-  .appMainNoteEdit {
-    padding: 25px;
-  }
-  
-  .appMainNoteEdit input,
-  textarea {
-    display: block;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    width: 100%;
-    height: calc(50vh - 130px);
-    padding: 10px;
-    resize: none;
-    font-size: inherit;
-    font-family: inherit;
-  }
-  .appMainNoteEdit input {
-    height: 50px;
-    font-size: 2rem;
-  }
-  
-  
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
+
+/* Editing */
+.appMainNoteEdit {
+  padding: 25px;
+}
+
+.appMainNoteEdit input,
+textarea {
+  display: block;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(50vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.appMainNoteEdit input {
+  height: 50px;
+  font-size: 2rem;
+}
+
+.buttonbox{
+margin-top: 1rem;
+text-align: right;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #9ae87e;
+  color: #32cc60;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid #9ae87e;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.button:hover,
+.button:active {
+  background-color: #32cc60;
+  color: white;
+}

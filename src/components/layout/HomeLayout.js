@@ -1,7 +1,10 @@
 import MainNavigation from "./MainNavigation";
 import classes from "./HomeLayout.module.css";
 
+
+
 function HomeLayout(props) {
+  
   return (
     <div>
       <MainNavigation />

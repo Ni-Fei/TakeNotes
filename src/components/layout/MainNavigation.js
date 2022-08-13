@@ -10,8 +10,9 @@ function MainNavigation() {
           <li>
             <Link to="/">Home</Link>
           </li>
+         
           <li>
-            <Link to="/my-notes-list">My Notes List</Link>
+            <Link to="/register">Register</Link>
           </li>
           <li>
             <Link to="/login">Login</Link>

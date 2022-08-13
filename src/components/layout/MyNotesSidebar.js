@@ -1,31 +1,32 @@
 import classes from "./MyNotesSidebar.module.css";
 import { MdDeleteForever } from "react-icons/md";
+import { useState } from "react";
 
-function MyNotesSidebar({
-  notes,
-  onAddNote,
-  onDelNode,
-  activeNote,
-  setActiveNote,
-}) {
+function MyNotesSidebar({ notes, onDelNode }) {
+  const [title, setTitle] = useState("");
+
+  async function populateNotes() {
+    const req = await fetch("http://localhost:1140/api/retrieveNote")
+    
+    const data = req.json()
+    if(data.status === "ok"){
+      setTitle(data.title)
+    }
+    else{
+      alert(data.error)
+    }
+  }
+
   return (
     <div className={classes.appSidebar}>
       <div className={classes.appSidebarHeader}>
-        <h1>NOTES</h1>
-
-        <button className={classes.sidebarAddbutton} onClick={onAddNote}>
-          ADD NEW NOTE
-        </button>
+        <h1> MY NOTES</h1>
       </div>
 
       <div className={classes.appSidebarNotes}>
         {notes.map((note) => (
-
-          <div className={classes.appSidebarNote} 
-          onClick={() => setActiveNote(note.id)}>
-
+          <div className={classes.appSidebarNote}>
             <div className={classes.sidebarNoteTitle}>
-              
               <strong>{note.title}</strong>
 
               <button
